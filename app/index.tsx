@@ -11,20 +11,35 @@ const usuarios = [
   nome: "Cicinho cabeça",
   cargo: "aluno"
  } 
-]
+];
 
 export default function Index() {
   return (
     <View
       style={style.container}
-     >
+    >
       {
         usuarios.map( item => (
-         <View style={StylePropertyMap.itemLista}> 
-          <Text Style={{ fontSize: 20 }}>{item.nome}</Text>
+         <View style={style.itemLista}> 
+          <Text style={style.textoLista}>{item.nome}</Text>
          </View> 
         ))
       } 
     </View>
   );
 }
+
+
+const style= StyleSheet.create({
+
+  container: {
+    flex: 1,
+    justifyContent: "flex-start",
+    alignItems: "Center",
+  },
+
+  itemLista: {
+    width: '100%',
+    padding: 10,
+  }
+})
